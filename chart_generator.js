@@ -99,16 +99,11 @@ function initializeUI() {
         const label = document.createElement('label');
         label.textContent = planet;
 
-        // Create sign select
+        // Create disabled sign display
         const signSelect = document.createElement('select');
         signSelect.id = `${planet}-sign`;
-        signSelect.innerHTML = '<option value="">Select Sign</option>';
-        SIGNS.forEach(sign => {
-            const option = document.createElement('option');
-            option.value = sign;
-            option.textContent = sign;
-            signSelect.appendChild(option);
-        });
+        signSelect.disabled = true;
+        signSelect.innerHTML = '<option value="">No Sign</option>';
 
         // Create house select
         const houseSelect = document.createElement('select');
@@ -246,7 +241,8 @@ function updateChart() {
             if (lagnaSign) {
                 sign = currentChart.signs[house];
                 // Update the sign select to match house sign
-                document.getElementById(`${planet}-sign`).value = sign;
+                const signSelect = document.getElementById(`${planet}-sign`);
+                signSelect.innerHTML = `<option value="${sign}">${sign}</option>`;
             }
 
             if (!currentChart.houses[house]) {
