@@ -394,9 +394,13 @@ function generateJSON() {
 
 function copyJSON() {
     const jsonOutput = document.getElementById('json-output');
-    jsonOutput.select();
-    document.execCommand('copy');
-    alert('JSON copied to clipboard!');
+    navigator.clipboard.writeText(jsonOutput.value).then(() => {
+        const notification = document.createElement('div');
+        notification.textContent = 'JSON copied to clipboard!';
+        notification.style.cssText = 'position:fixed; bottom:20px; right:20px; background:#4CAF50; color:white; padding:10px 20px; border-radius:4px; z-index:1000;';
+        document.body.appendChild(notification);
+        setTimeout(() => notification.remove(), 2000);
+    });
 }
 
 // Initialize the UI when the page loads
