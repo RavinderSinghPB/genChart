@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Indian Chart Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>North Indian Chart Generator</h1>
+        
+        <div class="container">
+            <div class="header-section">
+                <div class="controls-bar">
+                    <button onclick="resetPlanets()" class="btn reset-btn">Reset Chart</button>
+                    <select id="lagna-sign" onchange="handleLagnaChange()" class="lagna-select">
+                        <option value="">Select Lagna Sign</option>
+                    </select>
+                </div>
+                
+                <div class="constants-info">
+                    <div class="constants-grid">
+                        <div class="constant-box">
+                            <span class="constant-label">Malefic:</span>
+                            <div id="malefic-planets" class="constant-value"></div>
+                        </div>
+                        <div class="constant-box">
+                            <span class="constant-label">Benefic:</span>
+                            <div id="benefic-planets" class="constant-value"></div>
+                        </div>
+                        <div class="constant-box">
+                            <span class="constant-label">House Types:</span>
+                            <div id="house-types" class="constant-value"></div>
+                        </div>
+                        <div class="constant-box">
+                            <span class="constant-label">Sign Types:</span>
+                            <div id="sign-types" class="constant-value"></div>
+                        </div>
+                        <div class="constant-box">
+                            <span class="constant-label">Exalted:</span>
+                            <div id="exalted-signs" class="constant-value"></div>
+                        </div>
+                        <div class="constant-box">
+                            <span class="constant-label">Debilitated:</span>
+                            <div id="debilitated-signs" class="constant-value"></div>
+                        </div>
+                        <div class="constant-box">
+                            <span class="constant-label">Own Signs:</span>
+                            <div id="own-signs" class="constant-value"></div>
+                        </div>
+                        <div class="constant-box">
+                            <span class="constant-label">Planet Aspects:</span>
+                            <div id="planet-aspects" class="constant-value"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="chart-controls-wrapper">
+                    <div class="chart">
+                        <div class="house" id="house1"><span class="house-number">1</span></div>
+                        <div class="house" id="house2"><span class="house-number">2</span></div>
+                        <div class="house" id="house3"><span class="house-number">3</span></div>
+                        <div class="house" id="house4"><span class="house-number">4</span></div>
+                        <div class="house" id="house5"><span class="house-number">5</span></div>
+                        <div class="house" id="house6"><span class="house-number">6</span></div>
+                        <div class="house" id="house7"><span class="house-number">7</span></div>
+                        <div class="house" id="house8"><span class="house-number">8</span></div>
+                        <div class="house" id="house9"><span class="house-number">9</span></div>
+                        <div class="house" id="house10"><span class="house-number">10</span></div>
+                        <div class="house" id="house11"><span class="house-number">11</span></div>
+                        <div class="house" id="house12"><span class="house-number">12</span></div>
+                    </div>
+                    <div class="planet-controls-section">
+                        <h3>Planet Placement</h3>
+                        <div id="planet-controls"></div>
+                    </div>
+                </div>
+                <div class="json-section">
+                    <div class="action-buttons">
+                        <button onclick="autoFillRemainingHouses()" class="btn">Auto-Fill Remaining</button>
+                        <button onclick="generateJSON()" class="btn">Generate JSON</button>
+                        <button onclick="copyJSON()" class="btn">Copy JSON</button>
+                    </div>
+                    <textarea class="json-output" id="json-output" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="constants.js"></script>
+    <script src="chart_generator.js"></script>
+</body>
+</html>

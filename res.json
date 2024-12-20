@@ -1,0 +1,82 @@
+[
+    {
+      "id": 0,
+      "name": "Sun",
+      "sign": "Libra",
+      "signLord": "Venus",
+      "house": 1,
+      "is_planet_set": false
+    },
+    {
+      "id": 1,
+      "name": "Moon",
+      "sign": "Leo",
+      "signLord": "Sun",
+      "house": 11,
+      "is_planet_set": false
+    },
+    {
+      "id": 2,
+      "name": "Mars",
+      "sign": "Aries",
+      "signLord": "Mars",
+      "house": 7,
+      "is_planet_set": false
+    },
+    {
+      "id": 3,
+      "name": "Mercury",
+      "sign": "Scorpio",
+      "signLord": "Mars",
+      "house": 2,
+      "is_planet_set": false
+    },
+    {
+      "id": 4,
+      "name": "Jupiter",
+      "sign": "Capricorn",
+      "signLord": "Saturn",
+      "house": 4,
+      "is_planet_set": false
+    },
+    {
+      "id": 5,
+      "name": "Venus",
+      "sign": "Scorpio",
+      "signLord": "Mars",
+      "house": 2,
+      "is_planet_set": false
+    },
+    {
+      "id": 6,
+      "name": "Saturn",
+      "sign": "Gemini",
+      "signLord": "Mercury",
+      "house": 9,
+      "is_planet_set": false
+    },
+    {
+      "id": 7,
+      "name": "Rahu",
+      "sign": "Sagittarius",
+      "signLord": "Jupiter",
+      "house": 3,
+      "is_planet_set": false
+    },
+    {
+      "id": 8,
+      "name": "Ketu",
+      "sign": "Gemini",
+      "signLord": "Mercury",
+      "house": 9,
+      "is_planet_set": false
+    },
+    {
+      "id": 9,
+      "name": "Ascendant",
+      "sign": "Libra",
+      "signLord": "Venus",
+      "house": 1,
+      "is_planet_set": false
+    }
+  ]
