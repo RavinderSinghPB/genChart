@@ -345,7 +345,10 @@ function updateChartDisplay() {
 
                     // Get aspected houses
                     const aspects = PLANET_ASPECTS[planet] || [];
-                    const aspectHouses = aspects.map(aspect => ((i + aspect - 1) % 12));
+                    const aspectHouses = aspects.map(aspect => {
+                        const house = (i + aspect - 1) % 12;
+                        return house === 0 ? 12 : house;
+                    });
 
                     planetDiv.textContent = planet;
                     if (statuses.length > 0) {
