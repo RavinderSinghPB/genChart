@@ -403,5 +403,51 @@ function copyJSON() {
     });
 }
 
+function loadFromJSON() {
+    const jsonText = document.getElementById('json-output').value;
+    if (!jsonText.trim()) {
+        alert('Please paste JSON data in the textarea first');
+        return;
+    }
+
+    try {
+        const planetData = JSON.parse(jsonText);
+        
+        // Reset current chart first
+        resetPlanets();
+
+        // Find and set Lagna/Ascendant first
+        const ascendant = planetData.find(p => p.name === 'Ascendant');
+        if (ascendant) {
+            document.getElementById('lagna-sign').value = ascendant.sign;
+            handleLagnaChange();
+        }
+
+        // Set positions for all planets
+        planetData.forEach(planet => {
+            const houseSelect = document.getElementById(`${planet.name}-house`);
+            const signSelect = document.getElementById(`${planet.name}-sign`);
+            
+            if (houseSelect && signSelect) {
+                houseSelect.value = planet.house;
+                signSelect.value = planet.sign;
+            }
+        });
+
+        // Update chart with new positions
+        updateChart();
+
+        // Show success notification
+        const notification = document.createElement('div');
+        notification.textContent = 'Chart loaded successfully!';
+        notification.style.cssText = 'position:fixed; bottom:20px; right:20px; background:#4CAF50; color:white; padding:10px 20px; border-radius:4px; z-index:1000;';
+        document.body.appendChild(notification);
+        setTimeout(() => notification.remove(), 2000);
+
+    } catch (error) {
+        alert('Error loading JSON: ' + error.message);
+    }
+}
+
 // Initialize the UI when the page loads
 window.onload = initializeUI;
